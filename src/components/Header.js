@@ -1,6 +1,6 @@
 import React from "react";
 
-const logoUrl = 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png'
+const logoUrl = 'https://cdn.logo.com/hotlink-ok/logo-social-sq.png';
 
 function Header() {
     return (
@@ -10,4 +10,4 @@ function Header() {
     )
 }
 
-export default Header
+export default Header;
