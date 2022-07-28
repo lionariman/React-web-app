@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Profile from './components/Frofile';
+import Profile from './components/Profile';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 
@@ -9,7 +9,7 @@ function App() {
     <div className='app-wrapper'>
       <Header></Header>
       <Sidebar></Sidebar>
-      <Profile></Profile>
+      <Profile></Profile> 
     </div>
   );
 }

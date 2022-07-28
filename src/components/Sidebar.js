@@ -1,8 +1,9 @@
 import React from "react";
+import s from "./Sidebar.module.css"
 
 function Sidebar() {
     return (
-        <nav className='nav'>
+        <nav className={s.nav}>
             <div>
                 <button>Profile</button>
             </div>
