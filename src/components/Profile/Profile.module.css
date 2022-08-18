@@ -1,0 +1,20 @@
+  .avatar {
+    padding: 1rem;
+    background-color: blue;
+    border-radius: 7px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .avatar img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .allPosts {
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: yellowgreen;
+    border-radius: 7px;
+  }
+  

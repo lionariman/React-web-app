@@ -8,3 +8,7 @@
   grid-template-rows: 1fr;
   grid-gap: 0.5rem;
 }
+
+.app-wrapper-content {
+  grid-area: p;
+}
