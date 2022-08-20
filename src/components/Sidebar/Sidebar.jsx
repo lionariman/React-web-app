@@ -1,23 +1,24 @@
 import React from "react";
-import s from "./Sidebar.module.css"
+import s from "./Sidebar.module.css";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
     return (
         <nav className={s.nav} id="Sidebar">
             <div>
-                <a href="/profile" className={s.button}>Profile</a>
+                <Link to="/profile" className={s.button}>profile</Link>
             </div>
             <div>
-                <a href="/messages" className={s.button}>Messages</a>
+                <Link to="/messages" className={s.button}>messages</Link>
             </div>
             <div>
-                <a href="#" className={s.button}>News</a>
+                <Link to="/news" className={s.button}>news</Link>
             </div>
             <div>
-                <a href="#" className={s.button}>Music</a>
+                <Link to="/music" className={s.button}>music</Link>
             </div>
             <div>
-                <a href="#" className={s.button}>Settings</a>
+                <Link to="/settings" className={s.button}>settings</Link>
             </div>
         </nav>
     )
