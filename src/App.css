@@ -5,7 +5,6 @@
   "h h"
   "n p";
   grid-template-columns: 2fr 10fr;
-  grid-template-rows: 1fr;
   grid-gap: 0.5rem;
 }
 

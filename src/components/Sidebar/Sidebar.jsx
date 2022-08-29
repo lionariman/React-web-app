@@ -1,24 +1,30 @@
 import React from "react";
 import s from "./Sidebar.module.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+// function LinkItem(props) {
+//     return <div>
+//         <NavLink to="/profile" className={s.button}>profile</NavLink>
+//     </div>
+// }
 
 function Sidebar() {
     return (
         <nav className={s.nav} id="Sidebar">
             <div>
-                <Link to="/profile" className={s.button}>profile</Link>
+                <NavLink to="/profile" className={s.button}>profile</NavLink>
             </div>
             <div>
-                <Link to="/messages" className={s.button}>messages</Link>
+                <NavLink to="/messages" className={s.button}>messages</NavLink>
             </div>
             <div>
-                <Link to="/news" className={s.button}>news</Link>
+                <NavLink to="/news" className={s.button}>news</NavLink>
             </div>
             <div>
-                <Link to="/music" className={s.button}>music</Link>
+                <NavLink to="/music" className={s.button}>music</NavLink>
             </div>
             <div>
-                <Link to="/settings" className={s.button}>settings</Link>
+                <NavLink to="/settings" className={s.button}>settings</NavLink>
             </div>
         </nav>
     )

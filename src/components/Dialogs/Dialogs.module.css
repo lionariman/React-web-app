@@ -1,0 +1,20 @@
+.dialogsComponent {
+    display: grid;
+    background-color: aqua;
+    grid-template-areas:
+    "dt dt"
+    "ls rs";
+    grid-template-columns: 4fr 10fr;
+}
+
+.dialogs {
+    grid-area: ls;
+}
+
+.messages {
+    grid-area: rs;
+}
+
+.dialogsTitle {
+    grid-area: dt;
+}
