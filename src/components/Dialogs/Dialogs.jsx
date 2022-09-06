@@ -4,8 +4,8 @@ import s from "./Dialogs.module.css"
 
 function DialogItem(props) {
     return (
-        <div>
-            <NavLink to={props.id}>
+        <div className={s.dialogItem}>
+            <NavLink to={props.id} className={({isActive}) => (isActive ? s.active : "")}>
                 {props.name}
             </NavLink>
         </div>
@@ -13,7 +13,7 @@ function DialogItem(props) {
 }
 
 function MessageItem(props) {
-    return <div id={props.id}>
+    return <div id={props.id} className={s.messageItem}>
         {props.msg}
     </div>
 }

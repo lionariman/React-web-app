@@ -1,31 +1,31 @@
 .nav {
-    grid-area: n;
-    background-color: blueviolet;
-    text-align: center;
-    padding-top: 50px;
-    /* width: 210px; */
-    height: 420px;
-    border-radius: 7px;
-  }
+  grid-area: n;
+  background-color: blueviolet;
+  text-align: center;
+  padding-top: 50px;
+  /* width: 210px; */
+  height: 420px;
+  border-radius: 7px;
+}
 
-  .button {
-    background-color: white;
-    border: none;
-    color: black;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 19px;
-    border-radius: 5px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-  }
+.button {
+  background-color: white;
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 19px;
+  border-radius: 5px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
 
-  .button:hover {
-    background-color: brown;
-    color: white;
-  }
+.button:hover {
+  background-color: brown;
+  color: white;
+}
 
-  .aria-current {
-    color: brown;
-  }
+.active {
+  color: gold;
+}

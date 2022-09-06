@@ -18,3 +18,7 @@
 .dialogsTitle {
     grid-area: dt;
 }
+
+.active {
+    color: gold;
+}
