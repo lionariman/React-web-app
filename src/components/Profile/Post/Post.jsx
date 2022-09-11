@@ -10,6 +10,7 @@ function Post(props) {
             </div>
             <div className="like">
                 <button>Like</button>
+                {props.like}
             </div>
         </div>
     )

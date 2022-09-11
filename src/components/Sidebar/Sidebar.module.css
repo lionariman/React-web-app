@@ -3,29 +3,28 @@
   background-color: blueviolet;
   text-align: center;
   padding-top: 50px;
-  /* width: 210px; */
   height: 420px;
   border-radius: 7px;
 }
 
-.button {
-  background-color: white;
-  border: none;
-  color: black;
-  text-align: center;
+.button a {
   text-decoration: none;
-  display: inline-block;
-  font-size: 19px;
+  background-color: yellowgreen;
+  color: black;
+  font-size: 18px;
   border-radius: 5px;
-  margin-top: 1px;
-  margin-bottom: 1px;
+  padding: 5px;
+  margin: 2px;
+  display: inline-block;
 }
 
-.button:hover {
+.button a:hover {
   background-color: brown;
   color: white;
 }
 
-.active {
-  color: gold;
+.button a.active {
+  background-color: brown;
+  border-radius: 5px;
+  color: white;
 }

@@ -1,14 +1,21 @@
 .dialogsComponent {
     display: grid;
     background-color: aqua;
+    border-radius: 7px;
     grid-template-areas:
     "dt dt"
     "ls rs";
     grid-template-columns: 4fr 10fr;
+    padding: 15px;
 }
 
 .dialogs {
     grid-area: ls;
+}
+
+a:hover {
+    color: black;
+    background-color: white;
 }
 
 .messages {
@@ -19,6 +26,7 @@
     grid-area: dt;
 }
 
-.active {
-    color: gold;
+a.active {
+    color: black;
+    background-color: white;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Default from './components/Default/Default';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
@@ -21,6 +22,7 @@ function App() {
         <Sidebar></Sidebar>
         <div className='app-wrapper-content'>
           <Routes>
+            <Route path="/*" element={<Default></Default>}></Route>
             <Route path="/profile/*" element={<Profile></Profile>}></Route>
             <Route path="/messages/*" element={<Dialogs></Dialogs>}></Route>
             <Route path="/news/*" element={<News></News>}></Route>

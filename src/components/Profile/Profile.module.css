@@ -12,9 +12,18 @@
   
   .allPosts {
     padding-left: 2rem;
+    padding-right: 2rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
     background-color: yellowgreen;
+    border-radius: 7px;
+  }
+
+  .description {
+    background-color:violet;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    padding-right: 2rem;
     border-radius: 7px;
   }
   
