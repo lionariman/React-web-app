@@ -10,11 +10,11 @@ function Dialogs(props) {
                 <h2>Dialogs</h2>
             </div>
             <div className={s.dialogs}>
-                {props.data['dialogsData'].map((item, i) =>
+                {props.dialogsPageData.dialogsData.map((item, i) =>
                     <DialogItem key={i} name={item.name} id={item.id}></DialogItem>)}
             </div>
             <div className={s.messages}>
-                {props.data['messagesData'].map((item, i) =>
+                {props.dialogsPageData.messagesData.map((item, i) =>
                     <MessageItem key={i} msg={item.msg} id={item.id}></MessageItem>)}
             </div>
         </div>
