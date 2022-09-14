@@ -5,6 +5,7 @@ import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
 import Dialogs from './components/Dialogs/Dialogs';
+import Friends from './components/Friends/Friends';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
@@ -26,7 +27,9 @@ function App(props) {
             <Route path="/profile/*" element={
               <Profile postsData={props.state.profilePage.postsData}></Profile>}></Route>
             <Route path="/messages/*" element={
-              <Dialogs dialogsPageData={props.state.dialogsPage}></Dialogs>}></Route>
+              <Dialogs dialogsPage={props.state.dialogsPage}></Dialogs>}></Route>
+            <Route path="/friends/*" element={
+              <Friends friendsPage={props.state.friendsPage}></Friends>}></Route>
             <Route path="/news/*" element={<News></News>}></Route>
             <Route path="/music/*" element={<Music></Music>}></Route>
             <Route path="/settings/*" element={<Settings></Settings>}></Route>

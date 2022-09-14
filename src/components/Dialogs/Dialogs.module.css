@@ -1,21 +1,17 @@
 .dialogsComponent {
-    display: grid;
     background-color: aqua;
     border-radius: 7px;
-    grid-template-areas:
-    "dt dt"
-    "ls rs";
-    grid-template-columns: 4fr 10fr;
     padding: 15px;
+    
+    display: grid;
+    grid-template-areas:
+        "dt dt"
+        "ls rs";
+    grid-template-columns: 4fr 10fr;
 }
 
 .dialogs {
     grid-area: ls;
-}
-
-a:hover {
-    color: black;
-    background-color: white;
 }
 
 .messages {
@@ -24,9 +20,4 @@ a:hover {
 
 .dialogsTitle {
     grid-area: dt;
-}
-
-a.active {
-    color: black;
-    background-color: white;
 }
