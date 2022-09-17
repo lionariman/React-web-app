@@ -1,3 +1,6 @@
 .post {
-    background-color: yellowgreen;
+    background-color: cyan;
+    border-radius: 7px;
+    padding-left: 8px;
+    padding-right: 8px;
 }

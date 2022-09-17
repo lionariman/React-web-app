@@ -6,3 +6,23 @@
     background-color: yellowgreen;
     border-radius: 7px;
 }
+
+.textareaBlock .textarea {
+    border-radius: 7px;
+    border-color: cyan;
+    border-width: 2px;
+}
+
+.textareaBlock .addPostButton {
+    background-color: violet;
+    position: absolute;
+    
+    border: none;
+    border-radius: 7px;
+    color: black;
+    padding: 8px 18px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}

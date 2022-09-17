@@ -2,22 +2,48 @@
     background-color: aqua;
     border-radius: 7px;
     padding: 15px;
-    
+
     display: grid;
     grid-template-areas:
-        "dt dt"
-        "ls rs";
+        "dialogsTitleBlock dialogsTitleBlock"
+        "dialogsBlock messagesBlock"
+        "dialogsBlock textareaBlock"
+        "dialogsBlock sendButtonBlock";
     grid-template-columns: 4fr 10fr;
 }
 
-.dialogs {
-    grid-area: ls;
+.dialogsBlock {
+    grid-area: dialogsBlock;
 }
 
-.messages {
-    grid-area: rs;
+.messagesBlock {
+    grid-area: messagesBlock;
 }
 
 .dialogsTitle {
-    grid-area: dt;
+    grid-area: dialogsTitleBlock;
+}
+
+.textareaBlock {
+    grid-area: textareaBlock;
+}
+
+.textareaBlock .textarea {
+    background-color: white;
+    border: 1px solid #4CAF50;
+    border-radius: 7px;
+}
+
+.textareaBlock .sendButton {
+    background-color: #4CAF50;
+    position: absolute;
+
+    border: none;
+    border-radius: 7px;
+    color: white;
+    padding: 8px 18px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
 }
