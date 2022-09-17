@@ -1,4 +1,4 @@
-# React App
+# React App | Social network
 
 ## Available Scripts
 
