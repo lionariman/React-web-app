@@ -1,17 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import importedState from './state/state';
+import './index.css';
+import state from './state/state';
+import { methods } from './state/state';
+import { renderEntireTree } from './render';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-
-root.render(
-  <React.StrictMode>
-    <App state={importedState} />
-  </React.StrictMode>
-);
+renderEntireTree({
+  state: state,
+  methods: methods
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

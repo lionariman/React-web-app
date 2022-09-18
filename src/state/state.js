@@ -1,4 +1,6 @@
-let state = {
+import { renderEntireTree } from "../render";
+
+const state = {
     dialogsPage: {
         dialogsData: [
             { id: '1', name: 'Nariman' },
@@ -17,11 +19,15 @@ let state = {
     },
     profilePage: {
         postsData: [
-            { name: 'Nariman', like: "19" },
-            { name: 'Abdullah', like: "74" },
-            { name: 'Linkoln', like: "2" },
-            { name: 'Ronaldo', like: "44" },
-            { name: 'Messi', like: "32" }
+            { id: '1', message: 'mars is the fourth planet in front of the sun', like: "19" },
+            { id: '2', message: 'milky way is a galaxy', like: "74" },
+            { id: '3', message: 'what\'s more useless than you?', like: "2" },
+            { id: '4', message: 'I don\'t like such innocent people...', like: "44" },
+            {
+                id: 5,
+                message: 'Are you listening to me, Neo, or were you looking at the woman in the red dress?',
+                like: "32"
+            }
         ]
     },
     friendsPage: {
@@ -36,6 +42,21 @@ let state = {
             { id: '8', name: 'Humanoid', age: "000" },
             { id: '9', name: 'Alien', age: "1000" }
         ]
+    }
+}
+
+export const methods = {
+    addPost(postMessage) {
+        let newPost = {
+            id: 6,
+            message: postMessage,
+            like: 0
+        }
+        state.profilePage.postsData.push(newPost);
+        renderEntireTree({
+            state: state,
+            methods: methods
+        });
     }
 }
 

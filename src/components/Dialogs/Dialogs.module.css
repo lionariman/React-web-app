@@ -12,6 +12,10 @@
     grid-template-columns: 4fr 10fr;
 }
 
+.dialogsTitle {
+    grid-area: dialogsTitleBlock;
+}
+
 .dialogsBlock {
     grid-area: dialogsBlock;
 }
@@ -20,12 +24,9 @@
     grid-area: messagesBlock;
 }
 
-.dialogsTitle {
-    grid-area: dialogsTitleBlock;
-}
-
 .textareaBlock {
     grid-area: textareaBlock;
+    margin-top: 15px;
 }
 
 .textareaBlock .textarea {
