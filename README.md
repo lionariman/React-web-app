@@ -3,7 +3,7 @@
 ### Available Scripts
 
 ```npm install```
-Install all dependencies.
+<br>Install all dependencies.
 
 ```npm start```
-Runs the app in the development mode.
+<br>Runs the app in the development mode.
