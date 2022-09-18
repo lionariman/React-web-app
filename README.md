@@ -1,9 +1,9 @@
-# React App | Social network
+## React App | Social network
 
-## Available Scripts
+### Available Scripts
 
-### `npm install`
+```npm install```
 Install all dependencies.
 
-### `npm start`
+```npm start```
 Runs the app in the development mode.
