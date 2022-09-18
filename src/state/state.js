@@ -28,7 +28,8 @@ const state = {
                 message: 'Are you listening to me, Neo, or were you looking at the woman in the red dress?',
                 like: "32"
             }
-        ]
+        ],
+        newPostText: ''
     },
     friendsPage: {
         friendsData: [
@@ -46,13 +47,20 @@ const state = {
 }
 
 export const methods = {
-    addPost(postMessage) {
-        let newPost = {
+    addPost() {
+        state.profilePage.postsData.push({
             id: 6,
-            message: postMessage,
+            message: state.profilePage.newPostText,
             like: 0
-        }
-        state.profilePage.postsData.push(newPost);
+        });
+        renderEntireTree({
+            state: state,
+            methods: methods
+        });
+        state.profilePage.newPostText = '';
+    },
+    onPostChange(letter) {
+        state.profilePage.newPostText = letter;
         renderEntireTree({
             state: state,
             methods: methods

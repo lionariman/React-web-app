@@ -7,6 +7,12 @@
     border-radius: 7px;
 }
 
+.textarea {
+    height: 30px;
+    width: 500px;
+    max-height: 200px;
+}
+
 .textareaBlock .textarea {
     border-radius: 7px;
     border-color: cyan;
