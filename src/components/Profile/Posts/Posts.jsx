@@ -3,15 +3,22 @@ import s from "./Posts.module.css"
 import Post from "./Post/Post";
 
 function Posts(props) {
-    // debugger;
-    let postsElem = props.profilePage.postsData.map((item, i) =>
+    let postsElem = props.store.getState().profilePage.postsData.map((item, i) =>
         <Post key={i} id={item.id} message={item.message} like={item.like}></Post>);
 
     let refTextarea = React.createRef();
 
+    let addPost = () => {
+        props.store.dispatch({
+            type: 'ADD-POST'
+        });
+    }
+
     let onPostChange = () => {
-        let val = refTextarea.current.value;
-        props.methods.onPostChange(val);
+        props.store.dispatch({
+            type: 'ON-POST-CHANGE',
+            newText: refTextarea.current.value
+        });
     }
 
     return <div className={s.allPosts}>
@@ -20,11 +27,12 @@ function Posts(props) {
             <textarea
                 className={s.textarea}
                 ref={refTextarea}
-                value={props.profilePage.newPostText}
-                onChange={onPostChange} />
+                value={props.store.getState().profilePage.newPostText}
+                onChange={onPostChange}
+            />
             <button
                 className={s.addPostButton}
-                onClick={props.methods.addPost}>add post
+                onClick={addPost}>add post
             </button>
         </div>
         {postsElem}
