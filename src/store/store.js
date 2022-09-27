@@ -1,3 +1,6 @@
+const ADD_POST = 'ADD_POST';
+const ON_POST_CHANGE = 'ON_POST_CHANGE'
+
 let store = {
     _state: {
         dialogsPage: {
@@ -75,10 +78,10 @@ let store = {
 
     dispatch(action) {
         switch (action.type) {
-            case 'ADD-POST':
+            case 'ADD_POST':
                 this._addPost();
                 break;
-            case 'ON-POST-CHANGE':
+            case 'ON_POST_CHANGE':
                 this._onPostChange(action.newText);
                 break;
             default:
@@ -87,13 +90,13 @@ let store = {
     }
 }
 
-export let addPostActionCreator = () => {
-    store.dispatch({ type: 'ADD-POST'} );
+export const addPostActionCreator = () => {
+    store.dispatch({ type: ADD_POST} );
 }
 
-export let onPostChangeActionCreator = (text) => {
+export const onPostChangeActionCreator = (text) => {
     store.dispatch({
-        type: 'ON-POST-CHANGE',
+        type: ON_POST_CHANGE,
         newText: text
     })
 }
