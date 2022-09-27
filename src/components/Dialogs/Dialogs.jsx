@@ -2,6 +2,10 @@ import React from "react";
 import Dialog from "./Dialog/Dialog";
 import Message from "./Message/Message";
 import s from "./Dialogs.module.css"
+import {
+    addMessageActionCreator,
+    onMessageChangeActionCreator
+} from "../../store/store";
 
 const Dialogs = (props) => {
 
@@ -9,6 +13,10 @@ const Dialogs = (props) => {
         <Dialog key={i} id={item.id} name={item.name}></Dialog>);
     let messagesList = props.dialogsPage.messagesData.map((item, i) =>
         <Message key={i} id={item.id} msg={item.msg}></Message>);
+
+    let refTextarea = React.createRef();
+    let addMessage = () => { addMessageActionCreator(); }
+    let onMessageChange = () => { onMessageChangeActionCreator(refTextarea.current.value) }
 
     return (
         <div className={s.dialogsComponent}>
@@ -22,8 +30,18 @@ const Dialogs = (props) => {
                 {messagesList}
             </div>
             <div className={s.textareaBlock}>
-                <textarea className={s.textarea}></textarea>
-                <button className={s.sendButton}>Send</button>
+                <textarea
+                    className={s.textarea}
+                    ref={refTextarea}
+                    value={props.dialogsPage.newMessageText}
+                    onChange={onMessageChange}
+                />
+                <button
+                    className={s.sendButton}
+                    onClick={addMessage}
+                >
+                    Send
+                </button>
             </div>
         </div>
     )

@@ -1,13 +1,15 @@
 const ADD_POST = 'ADD_POST';
-const ON_POST_CHANGE = 'ON_POST_CHANGE'
+const ADD_MESSAGE = 'ADD_MESSAGE';
+const ON_POST_CHANGE = 'ON_POST_CHANGE';
+const ON_MESSAGE_CHANGE = 'ON_MESSAGE_CHANGE';
 
 let store = {
     _state: {
         dialogsPage: {
             dialogsData: [
-                { id: '1', name: 'Nariman' },
-                { id: '2', name: 'Abdullah' },
-                { id: '3', name: 'Linkoln' },
+                { id: '1', name: 'Lion' },
+                { id: '2', name: 'Eagle' },
+                { id: '3', name: 'Parrot' },
                 { id: '4', name: 'Ronaldo' },
                 { id: '5', name: 'Messi' }
             ],
@@ -17,7 +19,8 @@ let store = {
                 { id: '3', msg: 'No! It is my burger, not yours!' },
                 { id: '4', msg: 'what the heck!' },
                 { id: '5', msg: 'well... I got it...' }
-            ]
+            ],
+            newMessageText: ''
         },
         profilePage: {
             postsData: [
@@ -35,13 +38,13 @@ let store = {
         },
         friendsPage: {
             friendsData: [
-                { id: '1', name: 'Nariman', age: "23" },
-                { id: '2', name: 'Abdullah', age: "24" },
+                { id: '1', name: 'Pele', age: "23" },
+                { id: '2', name: 'Neuer', age: "24" },
                 { id: '3', name: 'Linkoln', age: "202" },
                 { id: '4', name: 'Ronaldo', age: "33" },
-                { id: '5', name: 'Messi', age: "35" },
+                { id: '5', name: 'Spider-man', age: "35" },
                 { id: '6', name: 'Maximus', age: "122" },
-                { id: '7', name: 'Ruslan', age: "50" },
+                { id: '7', name: 'Thanos', age: "50" },
                 { id: '8', name: 'Humanoid', age: "000" },
                 { id: '9', name: 'Alien', age: "1000" }
             ]
@@ -76,16 +79,37 @@ let store = {
         this._renderEntireTree(store);
     },
 
+    _addMessage() {
+        let newMessage = {
+            id: '6',
+            msg: this._state.dialogsPage.newMessageText
+        }
+        this._state.dialogsPage.messagesData.push(newMessage);
+        this._state.dialogsPage.newMessageText = '';
+        this._renderEntireTree(store);
+    },
+
+    _onMessageChange(newText) {
+        this._state.dialogsPage.newMessageText = newText;
+        this._renderEntireTree(store);
+    },
+
     dispatch(action) {
         switch (action.type) {
-            case 'ADD_POST':
+            case ADD_POST:
                 this._addPost();
                 break;
-            case 'ON_POST_CHANGE':
+            case ADD_MESSAGE:
+                this._addMessage();
+                break;
+            case ON_POST_CHANGE:
                 this._onPostChange(action.newText);
                 break;
+            case ON_MESSAGE_CHANGE:
+                this._onMessageChange(action.newText);
+                break;
             default:
-                console.log('< Wrong dispatch method >');
+                console.log('< DISPATCH can\'t recognise which method you wanted to call >');
         }
     }
 }
@@ -94,11 +118,22 @@ export const addPostActionCreator = () => {
     store.dispatch({ type: ADD_POST} );
 }
 
+export const addMessageActionCreator = () => {
+    store.dispatch({ type: ADD_MESSAGE });
+}
+
 export const onPostChangeActionCreator = (text) => {
     store.dispatch({
         type: ON_POST_CHANGE,
         newText: text
-    })
+    });
+}
+
+export const onMessageChangeActionCreator = (text) => {
+    store.dispatch({
+        type: ON_MESSAGE_CHANGE,
+        newText: text
+    });
 }
 
 export default store;
