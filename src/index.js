@@ -15,7 +15,6 @@ let renderEntireTree = (store) => {
   );
 }
 
-// let store = new Store();
 renderEntireTree(store);
 store.subscribe(renderEntireTree);
 

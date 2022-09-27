@@ -1,25 +1,18 @@
 import React from "react";
 import s from "./Posts.module.css"
 import Post from "./Post/Post";
+import {
+    addPostActionCreator,
+    onPostChangeActionCreator
+} from "../../../store/store";
 
 function Posts(props) {
     let postsElem = props.store.getState().profilePage.postsData.map((item, i) =>
         <Post key={i} id={item.id} message={item.message} like={item.like}></Post>);
 
     let refTextarea = React.createRef();
-
-    let addPost = () => {
-        props.store.dispatch({
-            type: 'ADD-POST'
-        });
-    }
-
-    let onPostChange = () => {
-        props.store.dispatch({
-            type: 'ON-POST-CHANGE',
-            newText: refTextarea.current.value
-        });
-    }
+    let addPost = () => { addPostActionCreator(); }
+    let onPostChange = () => { onPostChangeActionCreator(refTextarea.current.value); }
 
     return <div className={s.allPosts}>
         <h2>All Posts</h2>
