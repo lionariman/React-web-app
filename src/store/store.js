@@ -1,7 +1,5 @@
-const ADD_POST = 'ADD_POST';
-const ADD_MESSAGE = 'ADD_MESSAGE';
-const ON_POST_CHANGE = 'ON_POST_CHANGE';
-const ON_MESSAGE_CHANGE = 'ON_MESSAGE_CHANGE';
+import dialogsPageReducer from "./dialogsPageReduser";
+import profilePageReducer from "./profilePageReducer";
 
 let store = {
     _state: {
@@ -51,89 +49,15 @@ let store = {
         }
     },
 
-    getState() {
-        return this._state;
-    },
-
-    _renderEntireTree() {
-        console.log('renderEntireTree is empty');
-    },
-
-    subscribe(observer) {
-        this._renderEntireTree = observer;
-    },
-
-    _addPost() {
-        let newPost = {
-            id: 6,
-            message: this._state.profilePage.newPostText,
-            like: 0
-        }
-        this._state.profilePage.postsData.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._renderEntireTree(store);
-    },
-
-    _onPostChange(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._renderEntireTree(store);
-    },
-
-    _addMessage() {
-        let newMessage = {
-            id: '6',
-            msg: this._state.dialogsPage.newMessageText
-        }
-        this._state.dialogsPage.messagesData.push(newMessage);
-        this._state.dialogsPage.newMessageText = '';
-        this._renderEntireTree(store);
-    },
-
-    _onMessageChange(newText) {
-        this._state.dialogsPage.newMessageText = newText;
-        this._renderEntireTree(store);
-    },
+    getState() { return this._state; },
+    _callSubscriber() { console.log('renderEntireTree is empty'); },
+    subscribe(observer) { this._callSubscriber = observer; },
 
     dispatch(action) {
-        switch (action.type) {
-            case ADD_POST:
-                this._addPost();
-                break;
-            case ADD_MESSAGE:
-                this._addMessage();
-                break;
-            case ON_POST_CHANGE:
-                this._onPostChange(action.newText);
-                break;
-            case ON_MESSAGE_CHANGE:
-                this._onMessageChange(action.newText);
-                break;
-            default:
-                console.log('< DISPATCH can\'t recognise which method you wanted to call >');
-        }
+        this._state.dialogsPage = dialogsPageReducer(this._state.dialogsPage, action);
+        this._state.profilePage = profilePageReducer(this._state.profilePage, action);
+        this._callSubscriber(store);
     }
-}
-
-export const addPostActionCreator = () => {
-    store.dispatch({ type: ADD_POST });
-}
-
-export const addMessageActionCreator = () => {
-    store.dispatch({ type: ADD_MESSAGE });
-}
-
-export const onPostChangeActionCreator = (text) => {
-    store.dispatch({
-        type: ON_POST_CHANGE,
-        newText: text
-    });
-}
-
-export const onMessageChangeActionCreator = (text) => {
-    store.dispatch({
-        type: ON_MESSAGE_CHANGE,
-        newText: text
-    });
 }
 
 export default store;

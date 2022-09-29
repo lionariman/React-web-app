@@ -4,7 +4,7 @@ import Post from "./Post/Post";
 import {
     addPostActionCreator,
     onPostChangeActionCreator
-} from "../../../store/store";
+} from "../../../store/actions";
 
 function Posts(props) {
     let postsElem = props.profilePage.postsData.map((item, i) =>

@@ -5,7 +5,7 @@ import s from "./Dialogs.module.css"
 import {
     addMessageActionCreator,
     onMessageChangeActionCreator
-} from "../../store/store";
+} from "../../store/actions";
 
 const Dialogs = (props) => {
 
