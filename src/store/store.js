@@ -115,7 +115,7 @@ let store = {
 }
 
 export const addPostActionCreator = () => {
-    store.dispatch({ type: ADD_POST} );
+    store.dispatch({ type: ADD_POST });
 }
 
 export const addMessageActionCreator = () => {

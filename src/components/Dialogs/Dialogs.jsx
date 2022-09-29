@@ -14,9 +14,8 @@ const Dialogs = (props) => {
     let messagesList = props.dialogsPage.messagesData.map((item, i) =>
         <Message key={i} id={item.id} msg={item.msg}></Message>);
 
-    let refTextarea = React.createRef();
     let addMessage = () => { addMessageActionCreator(); }
-    let onMessageChange = () => { onMessageChangeActionCreator(refTextarea.current.value) }
+    let onMessageChange = (e) => { onMessageChangeActionCreator(e.target.value) }
 
     return (
         <div className={s.dialogsComponent}>
@@ -32,10 +31,8 @@ const Dialogs = (props) => {
             <div className={s.textareaBlock}>
                 <textarea
                     className={s.textarea}
-                    ref={refTextarea}
                     value={props.dialogsPage.newMessageText}
-                    onChange={onMessageChange}
-                />
+                    onChange={onMessageChange} />
                 <button
                     className={s.sendButton}
                     onClick={addMessage}

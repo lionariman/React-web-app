@@ -25,7 +25,7 @@ function App(props) {
           <Routes>
             <Route path="/*" element={<Default></Default>}></Route>
             <Route path="/profile/*" element={
-              <Profile store={props.store}></Profile>}></Route>
+              <Profile profilePage={props.store.getState().profilePage}></Profile>}></Route>
             <Route path="/messages/*" element={
               <Dialogs dialogsPage={props.store.getState().dialogsPage}></Dialogs>}></Route>
             <Route path="/friends/*" element={
