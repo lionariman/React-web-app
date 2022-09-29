@@ -1,4 +1,4 @@
-import store from "./store";
+import store from "./redux-store";
 import {
     ADD_MESSAGE,
     ADD_POST,

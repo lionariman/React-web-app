@@ -25,11 +25,11 @@ function App(props) {
           <Routes>
             <Route path="/*" element={<Default></Default>}></Route>
             <Route path="/profile/*" element={
-              <Profile profilePage={props.store.getState().profilePage}></Profile>}></Route>
+              <Profile profilePage={props.state.profilePage}></Profile>}></Route>
             <Route path="/messages/*" element={
-              <Dialogs dialogsPage={props.store.getState().dialogsPage}></Dialogs>}></Route>
+              <Dialogs dialogsPage={props.state.dialogsPage}></Dialogs>}></Route>
             <Route path="/friends/*" element={
-              <Friends friendsPage={props.store.getState().friendsPage}></Friends>}></Route>
+              <Friends friendsPage={props.state.friendsPage}></Friends>}></Route>
             <Route path="/news/*" element={<News></News>}></Route>
             <Route path="/music/*" element={<Music></Music>}></Route>
             <Route path="/settings/*" element={<Settings></Settings>}></Route>

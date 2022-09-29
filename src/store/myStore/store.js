@@ -1,4 +1,5 @@
 import dialogsPageReducer from "./dialogsPageReduser";
+import friendsPageReducer from "./friendsPageReducer";
 import profilePageReducer from "./profilePageReducer";
 
 let store = {
@@ -56,6 +57,7 @@ let store = {
     dispatch(action) {
         this._state.dialogsPage = dialogsPageReducer(this._state.dialogsPage, action);
         this._state.profilePage = profilePageReducer(this._state.profilePage, action);
+        this._state.friendsPage = friendsPageReducer(this._state.friendsPage, action);
         this._callSubscriber(store);
     }
 }
