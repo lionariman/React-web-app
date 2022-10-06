@@ -5,12 +5,16 @@ import App from './App';
 import './index.css';
 import store from './store/redux-store';
 
+import MyContext from './context'; // context import (delete me after testing)
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 let renderEntireTree = (state) => {
   root.render(
     <React.StrictMode>
-      <App state={state} />
+      <MyContext.Provider value={state}>
+        <App />
+      </MyContext.Provider>
     </React.StrictMode>
   );
 }

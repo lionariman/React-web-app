@@ -5,17 +5,24 @@ import {
     onPostChangeActionCreator
 } from "../../../store/actions";
 
+import MyContext from "../../../context";
+
 function PostsContainer(props) {
-
-    let addPost = () => { addPostActionCreator(); }
-    let onPostChange = (e) => { onPostChangeActionCreator(e.target.value); }
-
-    return <Posts
-        postsData={props.profilePage.postsData}
-        newPostText={props.profilePage.newPostText}
-        addPost={addPost}
-        onPostChange={onPostChange}>
-    </Posts>
+    return (
+        <MyContext.Consumer>
+            {value => {
+                let addPost = () => { addPostActionCreator(); }
+                let onPostChange = (e) => { onPostChangeActionCreator(e.target.value); }
+                return <Posts
+                    postsData={value.profilePage.postsData}
+                    newPostText={value.profilePage.newPostText}
+                    addPost={addPost}
+                    onPostChange={onPostChange}>
+                </Posts>
+            }
+            }
+        </MyContext.Consumer>
+    );
 
 }
 

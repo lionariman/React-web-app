@@ -8,7 +8,7 @@ function Profile(props) {
         <div>
             <ProfileInfo></ProfileInfo>
             {/* <Posts profilePage={props.profilePage}></Posts> */}
-            <PostsContainer profilePage={props.profilePage}></PostsContainer>
+            <PostsContainer ></PostsContainer>
         </div>
     )
 }

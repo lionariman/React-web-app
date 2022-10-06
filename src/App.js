@@ -24,15 +24,25 @@ function App(props) {
         <div className='app-wrapper-content'>
           <Routes>
             <Route path="/*" element={<Default></Default>}></Route>
+
             <Route path="/profile/*" element={
-              <Profile profilePage={props.state.profilePage}></Profile>}></Route>
-            <Route path="/messages/*" element={
-              <Dialogs dialogsPage={props.state.dialogsPage}></Dialogs>}></Route>
+              <Profile ></Profile>}>
+            </Route>
+
+            {/* <Route path="/messages/*" element={
+              <Dialogs dialogsPage={props.state.dialogsPage}></Dialogs>}>
+            </Route>
+
             <Route path="/friends/*" element={
-              <Friends friendsPage={props.state.friendsPage}></Friends>}></Route>
+              <Friends friendsPage={props.state.friendsPage}></Friends>}>
+            </Route> */}
+
             <Route path="/news/*" element={<News></News>}></Route>
+
             <Route path="/music/*" element={<Music></Music>}></Route>
+
             <Route path="/settings/*" element={<Settings></Settings>}></Route>
+
           </Routes>
         </div>
       </div>
