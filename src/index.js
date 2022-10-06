@@ -15,7 +15,6 @@ let renderEntireTree = (state) => {
   );
 }
 
-
 let subscriber = () => {
   renderEntireTree(store.getState());
 }
