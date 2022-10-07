@@ -1,4 +1,3 @@
-import store from "./redux-store";
 import {
     ADD_MESSAGE,
     ADD_POST,
@@ -7,23 +6,23 @@ import {
 } from "./actionConstants";
 
 export const addPostActionCreator = () => {
-    store.dispatch({ type: ADD_POST });
+    return { type: ADD_POST };
 }
 
 export const onPostChangeActionCreator = (text) => {
-    store.dispatch({
+    return {
         type: ON_POST_CHANGE,
         newText: text
-    });
+    };
 }
 
 export const addMessageActionCreator = () => {
-    store.dispatch({ type: ADD_MESSAGE });
+    return { type: ADD_MESSAGE };
 }
 
 export const onMessageChangeActionCreator = (text) => {
-    store.dispatch({
+    return {
         type: ON_MESSAGE_CHANGE,
         newText: text
-    });
+    };
 }

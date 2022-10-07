@@ -7,7 +7,7 @@ let reducers = combineReducers({
     profilePage: profilePageReducer,
     dialogsPage: dialogsPageReducer,
     friendsPage: friendsPageReducer
-})
+});
 
 let store = createStore(reducers);
 
