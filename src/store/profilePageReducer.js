@@ -31,7 +31,9 @@ let initialState = {
     newPostText: ''
 }
 
-const profilePageReducer = (state = initialState, action) => {
+const profilePageReducer = (defstate = initialState, action) => {
+    let state = { ...defstate };
+    state.postsData = [...defstate.postsData];
     switch (action.type) {
         case ADD_POST:
             return addPost(state);

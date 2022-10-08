@@ -6,17 +6,6 @@ import {
 } from "../../../store/actions";
 import { connect } from "react-redux";
 
-// function PostsContainer(props) {
-//     let addPost = () => { props.dispatch(addPostActionCreator()); } // callback
-//     let onPostChange = (e) => { props.dispatch(onPostChangeActionCreator(e.target.value)); } // callback
-//     return <Posts
-//         postsData={props.profilePage.postsData}
-//         newPostText={props.profilePage.newPostText}
-//         addPost={addPost}
-//         onPostChange={onPostChange}>
-//     </Posts>
-// }
-
 let mapStateToProps = (state) => {
     return {
         postsData: state.profilePage.postsData,
