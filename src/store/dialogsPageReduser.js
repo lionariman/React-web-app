@@ -4,15 +4,19 @@ const addMessage = (state) => {
     let newMessage = {
         id: '6',
         msg: state.newMessageText
-    }
-    state.messagesData.push(newMessage);
-    state.newMessageText = '';
-    return state;
+    };
+    return {
+        ...state,
+        messagesData: [...state.messagesData, newMessage],
+        newMessageText: ''
+    };
 }
 
 const onMessageChange = (state, newText) => {
-    state.newMessageText = newText;
-    return state;
+    return {
+        ...state,
+        newMessageText: newText
+    };
 }
 
 let initialState = {

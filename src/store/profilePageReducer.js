@@ -5,15 +5,19 @@ const addPost = (state) => {
         id: 6,
         message: state.newPostText,
         like: 0
-    }
-    state.postsData.push(newPost);
-    state.newPostText = '';
-    return state;
+    };
+    return {
+        ...state,
+        postsData: [...state.postsData, newPost],
+        newPostText: ''
+    };
 }
 
 const onPostChange = (state, newText) => {
-    state.newPostText = newText;
-    return state;
+    return {
+        ...state,
+        newPostText: newText
+    };
 }
 
 let initialState = {
@@ -31,9 +35,7 @@ let initialState = {
     newPostText: ''
 }
 
-const profilePageReducer = (defstate = initialState, action) => {
-    let state = { ...defstate };
-    state.postsData = [...defstate.postsData];
+const profilePageReducer = (state = initialState, action) => {
     switch (action.type) {
         case ADD_POST:
             return addPost(state);
