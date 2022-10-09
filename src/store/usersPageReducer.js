@@ -14,7 +14,7 @@ const usersPageReducer = (state = initialState, action) => {
             return {
                 ...state,
                 usersData: state.usersData.map(item => {
-                    if (item.id == action.userId) {
+                    if (item.id === action.userId) {
                         return {
                             ...item,
                             followed: (item.followed ? false : true)
