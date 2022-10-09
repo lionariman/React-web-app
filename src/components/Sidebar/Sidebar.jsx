@@ -25,9 +25,9 @@ function Sidebar() {
             <LinkItem link="/profile"></LinkItem>
             <LinkItem link="/messages"></LinkItem>
             <LinkItem link="/friends"></LinkItem>
-            <LinkItem link="/news"></LinkItem>
-            <LinkItem link="/music"></LinkItem>
-            <LinkItem link="/settings"></LinkItem>
+            {/* <LinkItem link="/news"></LinkItem> */}
+            {/* <LinkItem link="/music"></LinkItem> */}
+            {/* <LinkItem link="/settings"></LinkItem> */}
         </nav>
     )
 }
