@@ -4,8 +4,10 @@ import Default from './components/Default/Default';
 import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Sidebar from './components/Sidebar/Sidebar';
-import Dialogs from './components/Dialogs/Dialogs';
-// import Friends from './components/Friends/Friends';
+// import Dialogs from './components/Dialogs/Dialogs'; --- // in container
+import DialogsContainer from './components/Dialogs/DialogsContainer';
+// import Users from './components/Users/Users'; --- // in container
+import UsersContainer from './components/Users/UsersContainer';
 // import News from './components/News/News';
 // import Music from './components/Music/Music';
 // import Settings from './components/Settings/Settings';
@@ -14,7 +16,6 @@ import {
   Routes,
   Route,
 } from 'react-router-dom';
-import DialogsContainer from './components/Dialogs/DialogsContainer';
 
 function App(props) {
   return (
@@ -34,9 +35,9 @@ function App(props) {
               <DialogsContainer ></DialogsContainer>}>
             </Route>
 
-            {/* <Route path="/friends/*" element={
-              <Friends friendsPage={props.state.friendsPage}></Friends>}>
-            </Route> */}
+            <Route path="/users/*" element={
+              <UsersContainer ></UsersContainer>}>
+            </Route>
 
             {/* <Route path="/news/*" element={<News></News>}></Route>
 

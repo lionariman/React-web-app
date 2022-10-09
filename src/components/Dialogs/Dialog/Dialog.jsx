@@ -5,7 +5,9 @@ import s from "./Dialog.module.css"
 function Dialog(props) {
     return (
         <div className={s.dialogItem}>
-            <NavLink to={props.id} className={({ isActive }) => (isActive ? s.active : "")}>
+            <NavLink
+                to={(typeof props.id === 'number' ? props.id.toString() : props.id)}
+                className={({ isActive }) => (isActive ? s.active : "")}>
                 {props.name}
             </NavLink>
         </div>

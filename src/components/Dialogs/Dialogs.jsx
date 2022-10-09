@@ -4,12 +4,11 @@ import Message from "./Message/Message";
 import s from "./Dialogs.module.css";
 
 const Dialogs = (props) => {
-
+    
     let dialogsList = props.dialogsData.map((item, i) =>
         <Dialog key={i} id={item.id} name={item.name}></Dialog>);
     let messagesList = props.messagesData.map((item, i) =>
         <Message key={i} id={item.id} msg={item.msg}></Message>);
-
 
     return (
         <div className={s.dialogsComponent}>
@@ -35,7 +34,7 @@ const Dialogs = (props) => {
                 </button>
             </div>
         </div>
-    )
+    );
 }
 
 export default Dialogs;

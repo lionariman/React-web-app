@@ -6,3 +6,7 @@ a.active {
     color: black;
     background-color: white;
 }
+
+.followed {
+    color: goldenrod;
+}
